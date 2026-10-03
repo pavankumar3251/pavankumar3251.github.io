@@ -23,6 +23,7 @@ const Hero: React.FC = () => {
       <div className="hero__orb hero__orb--3" aria-hidden="true" />
 
       <div className="container hero__container">
+        <div className="hero__columns">
         <div className={`hero__content animate-fade-up ${inView ? 'in-view' : ''}`}>
           <div className="hero__status">
             <span className="hero__status-dot" />
@@ -87,6 +88,13 @@ const Hero: React.FC = () => {
             </a>
           </div>
         </div>
+
+        <div className={`hero__photo-col animate-fade-up delay-2 ${inView ? 'in-view' : ''}`}>
+          <div className="hero__photo-frame">
+            <img src="/profile.png" alt="Pavan Kumar S" className="hero__photo" />
+          </div>
+        </div>
+        </div>{/* end hero__columns */}
 
         <div className={`hero__tech-strip animate-fade-up delay-5 ${inView ? 'in-view' : ''}`}>
           <span className="hero__tech-label">Core stack</span>
