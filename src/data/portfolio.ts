@@ -6,7 +6,7 @@ export const personalInfo = {
   phone: '+91 6364517002',
   github: 'https://github.com/pavankumar3251',
   linkedin: 'https://www.linkedin.com/in/pavan-kumar-s1903/',
-  resume: '/Pavankumar_Resume.pdf',
+  resume: '/Pavankumar_Resume.pdf?v=2',
 }
 
 export const techStrip = [
