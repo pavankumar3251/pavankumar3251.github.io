@@ -1,0 +1,109 @@
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 52px;
+}
+
+.skills__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 2px 2px 0 0;
+}
+
+.skills__card:hover,
+.skills__card--active {
+  border-color: rgba(79, 142, 247, 0.35);
+  background: var(--bg-elevated);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--accent-dim);
+}
+
+[data-theme='light'] .skills__card:hover {
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.08);
+}
+
+.skills__card:hover::after,
+.skills__card--active::after {
+  opacity: 1;
+}
+
+.skills__card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.skills__category-icon {
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-dim);
+  border: 1px solid rgba(79, 142, 247, 0.2);
+  border-radius: 8px;
+  font-family: monospace;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.skills__card:hover .skills__category-icon {
+  background: var(--accent-dim-hover);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.skills__category-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.skills__tags .tag {
+  font-size: 12px;
+  padding: 3px 9px;
+  transition: all 0.18s;
+}
+
+.skills__card:hover .tag,
+.skills__card--active .tag {
+  border-color: rgba(79, 142, 247, 0.2);
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
